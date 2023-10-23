@@ -128,5 +128,5 @@ function renderMapa(){
     }
 }
 function checkMap(a,b){ 
-    document.getElementById("map").innerHTML=map[a].address[b].mapAddress
+    document.getElementById("map").innerHTML=mapArr[a].address[b].mapAddress
 }

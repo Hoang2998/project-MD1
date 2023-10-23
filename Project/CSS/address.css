@@ -54,3 +54,26 @@
 .render__map p:hover{
     background-color: rgb(203, 188, 160);
 }
+.comment{
+    padding: 1vw 5vw 3vw 5vw;
+    font-size: 1.5vw;
+    border-bottom: 1px solid silver;
+    /* color: rgb(10, 84, 10) ; */
+    font-family: cursive;
+}
+.input{
+    width: 100%;
+    height: 18vw;
+    padding: 1vw 5vw 5vw ;
+    display: flex;
+    gap: 2vw;
+    border-bottom: 1px solid silver;
+}
+.input input{
+    border: none;
+    border-bottom: 1px solid silver;
+    background-color: antiquewhite;
+}
+.input select{
+    background-color: antiquewhite;
+}

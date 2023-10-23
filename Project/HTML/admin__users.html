@@ -14,7 +14,7 @@
 <body>
     <header>
         <input type="text" placeholder="Tìm kiếm sản phẩm" oninput="findProduct()" id="findProduct">
-        <div >
+        <div>
             <div class="bell" onclick="stopRingBell()">
                 <div class="bellalert">
                     <img src="../img/notification-bell.png" width="90%" height="90%">
@@ -22,19 +22,19 @@
                 <div id="numberAlertBell">0</div>
             </div>
             <div style="margin-right: 2vw;" onclick="changeMainPage()">
-                <img src="../img/logoWeb.png"  width="25%"  alt="">
+                <img src="../img/logoWeb.png" width="25%" alt="">
                 <p>Trang chủ</p>
             </div>
-        
-        <span class="material-symbols-outlined logout" onclick="logOut()">
-            logout
-        </span>
+
+            <span class="material-symbols-outlined logout" onclick="logOut()">
+                logout
+            </span>
         </div>
         <div id="displayAlertBell">
-            <div style="border-bottom: 1px solid black;">
-                <p style="margin: 0;padding: 0.5vw 0;"> Sản phẩm <span>che xoai</span> còn lại: <span>20</span> cần nhập hàng thêm </p>
+            <div id="displayAlertBell">
+                không có thông báo
             </div>
-           
+
         </div>
     </header>
     <main>
@@ -47,7 +47,7 @@
                 <div class="same" onclick="categoryPage()">
                     <span class="material-symbols-outlined">
                         monitoring
-                        </span>
+                    </span>
                     <p>Quản lí chung và báo cáo</p>
                 </div>
                 <div class="same" onclick="productPage()">
@@ -68,7 +68,7 @@
                     </span>
                     <p>Quản lí đơn hàng</p>
                 </div>
-                
+
             </div>
             <div class="tranform">
                 <span class="material-symbols-outlined">
@@ -120,7 +120,7 @@
         function categoryPage() {
             window.location.href = "/Project/HTML/admin__chart.html"
         }
-        
+
     </script>
     <script src="../JS/admin/admin.js"></script>
     <script src="../JS/admin/admin__users.js"></script>

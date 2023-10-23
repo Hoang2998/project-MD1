@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/Project/CSS/admin.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
+
 <body>
     <header>
         <input type="text" placeholder="Tìm kiếm sản phẩm" oninput="findProducta()" id="findProduct">
-        <div >
+        <div>
             <div class="bell" onclick="stopRingBell()">
                 <div class="bellalert">
                     <img src="../img/notification-bell.png" width="90%" height="90%">
@@ -18,63 +21,63 @@
                 <div id="numberAlertBell">0</div>
             </div>
             <div style="margin-right: 2vw;" onclick="changeMainPage()">
-                <img src="../img/logoWeb.png"  width="25%"  alt="">
+                <img src="../img/logoWeb.png" width="25%" alt="">
                 <p>Trang chủ</p>
             </div>
-        
-        <span class="material-symbols-outlined logout" onclick="logOut()">
-            logout
-        </span>
+
+            <span class="material-symbols-outlined logout" onclick="logOut()">
+                logout
+            </span>
         </div>
         <div id="displayAlertBell">
-            <div style="border-bottom: 1px solid black;">
-                <p style="margin: 0;padding: 0.5vw 0;"> Sản phẩm <span>che xoai</span> còn lại: <span>20</span> cần nhập hàng thêm </p>
+            <div id="displayAlertBell">
+                không có thông báo
             </div>
-           
+
         </div>
     </header>
     <main>
         <nav>
             <div class="nav__avatar">
-            <img src="/Project/img/avatar1.jpg" width="40vw">
-            <p>Aminn 1</p>
+                <img src="/Project/img/avatar1.jpg" width="40vw">
+                <p>Aminn 1</p>
             </div>
             <div class="nav__menu">
                 <div class="same" onclick="categoryPage()">
                     <span class="material-symbols-outlined">
                         monitoring
-                        </span>
-                    <p>Quản lí chung và báo cáo</p> 
-                    </div>
-
-            <div class="same" onclick="productPage()">
-                <span class="material-symbols-outlined">
-                    inventory_2
                     </span>
-                <p href="./admin__product.html" >Quản lí sản phẩm</p>
-            </div>
-            <div class="same" onclick="usersPage()">
-                <span class="material-symbols-outlined">
-                    group
-                    </span>
-                <p>Quản lí người dùng</p> 
-            </div>
-            <div class="same" onclick="billsPage()">
-                <span class="material-symbols-outlined">
-                    receipt_long
-                    </span>
-                <p>Quản lí đơn hàng</p> 
+                    <p>Quản lí chung và báo cáo</p>
                 </div>
-                
-            </div>        
+
+                <div class="same" onclick="productPage()">
+                    <span class="material-symbols-outlined">
+                        inventory_2
+                    </span>
+                    <p href="./admin__product.html">Quản lí sản phẩm</p>
+                </div>
+                <div class="same" onclick="usersPage()">
+                    <span class="material-symbols-outlined">
+                        group
+                    </span>
+                    <p>Quản lí người dùng</p>
+                </div>
+                <div class="same" onclick="billsPage()">
+                    <span class="material-symbols-outlined">
+                        receipt_long
+                    </span>
+                    <p>Quản lí đơn hàng</p>
+                </div>
+
+            </div>
             <div class="tranform">
                 <span class="material-symbols-outlined">
-                keyboard_backspace
+                    keyboard_backspace
                 </span>
             </div>
         </nav>
         <section>
-           <h1>Quản lí sản phẩm</h1>
+            <h1>Quản lí sản phẩm</h1>
             <div class="alertDelete">
                 <h3>Bạn chắc chắc muốn xóa sản phẩm <span></span> khỏi kho ???</h3>
                 <div>
@@ -84,20 +87,20 @@
             </div>
             <div class="addProduct">
                 <button onclick="addNewProduct()">
-                     +Thêm sản phẩm mới
+                    +Thêm sản phẩm mới
                 </button>
             </div>
-            <div id="viewAddProduct" >
-                
+            <div id="viewAddProduct">
+
             </div>
-            
+
             <table>
                 <thead>
                     <th>Stt</th>
                     <th>Ảnh</th>
                     <th>Sản Phẩm</th>
                     <th>Phân loại</th>
-                    <th style="display: flex; align-items: center; justify-content: center;">Đơn Giá 
+                    <th style="display: flex; align-items: center; justify-content: center;">Đơn Giá
                         <div style="display: flex;flex-direction: column;">
                             <button onclick="increase()">&and;</button>
                             <button onclick="decrease()">&or;</button>
@@ -107,19 +110,19 @@
                     <th>Đã bán</th>
                     <th>Chức năng</th>
                 </thead>
-                <tbody id="table__body">     
+                <tbody id="table__body">
                 </tbody>
             </table>
             <div id="viewUpdate">
-                <div class="closeViewUpdate" onclick="closeViewUpdate()"><span class="material-symbols-outlined" >
-                    arrow_forward_ios
+                <div class="closeViewUpdate" onclick="closeViewUpdate()"><span class="material-symbols-outlined">
+                        arrow_forward_ios
                     </span>
                 </div>
                 <div>
                     <h3>Cập nhập sản phẩm</h3>
                     <div id="displayUpdate"></div>
                 </div>
-                
+
             </div>
             <ul id="dots">
                 <li></li>
@@ -142,4 +145,5 @@
     </script>
     <script src="../JS/admin/admin.js"></script>
 </body>
+
 </html>
