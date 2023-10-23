@@ -20,7 +20,9 @@ for(let i =0;i<menuFood.length;i++){
         davArr.push(menuFood[i])
     }
 }
-console.log(cheArr)
+cheArr = cheArr.sort((a,b)=>b.sold - a.sold)
+traArr = traArr.sort((a,b)=>b.sold - a.sold)
+davArr = davArr.sort((a,b)=>b.sold - a.sold)
 
 checkLogin()
 alertProduct()    
@@ -408,8 +410,10 @@ function renderTra(arr){
         }
 
 function hotSale(){
+    menuFood = menuFood.sort((a,b)=>b.sold - a.sold)
+    console.log(menuFood);
     for(let i=0;i<menuFood.length;i++){
-        if(menuFood[i].sold > 30 ){
+        if(0<=i && i<5 && menuFood[i].sold != 0){
             menuFood[i].hotsale ="../img/hot-sale.png"
         }else if(menuFood[i].stock <= 0){
             menuFood[i].hotsale ="../img/SOLD OUT tag free icon 2.png"

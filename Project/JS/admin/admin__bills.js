@@ -1,5 +1,8 @@
 let bills = JSON.parse (localStorage.getItem("bills"))
+let alertAction = JSON.parse(localStorage.getItem("alertAction"))
 console.log(bills);
+// let alertAction = []
+// localStorage.setItem("alertAction",JSON.stringify(alertAction))
 let statusBill = [
     {
         id:0,
@@ -105,6 +108,8 @@ function viewBillProduct(index){
 }
 }
 function doneBill(index){
+    let comment = "đã được xử lí thành công"
+    addAlertAction(index,comment)
     bills[index].status = 1
     localStorage.setItem("bills",JSON.stringify(bills))
     renderBill()
@@ -112,6 +117,8 @@ function doneBill(index){
 
 }
 function cancelBill(index){
+    let comment = "đã bị hủy"
+    addAlertAction(index,comment)
     console.log(bills[index]);
     bills[index].status = 2
     localStorage.setItem("bills",JSON.stringify(bills))
@@ -136,4 +143,19 @@ function cancelBill(index){
     // localStorage.setItem("menuFood",JSON.stringify(menuFood))
     renderBill()
     document.getElementsByClassName("btn_bill")[index].innerHTML="đã xừ lí"
+}
+function uuid(){
+    return Math.floor(Math.random()*99999)
+}
+function addAlertAction(id,comment){
+    let idUser = bills[id].idUser
+    let idBill = bills[id].id
+    let alert = {
+        id: uuid(),
+        idBill:idBill,
+        idUser:idUser,
+        status:comment,
+    }
+    alertAction.unshift(alert)
+    localStorage.setItem("alertAction",JSON.stringify(alertAction))
 }

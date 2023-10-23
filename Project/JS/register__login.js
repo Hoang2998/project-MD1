@@ -101,7 +101,8 @@ function addUser(){
             cart:[],
             id:uuid(),
             role:"user",
-            status:1
+            status:1,
+            alertBill:0
         }
         listUser.push(user);
         localStorage.setItem("listUser",JSON.stringify(listUser))
@@ -195,10 +196,10 @@ function changePage(){
         signIn__AlertEmail.innerHTML=""
         signIn__AlertPassword.innerHTML=""
         if(listUser[index].role == "user"){
-        window.location.href="http://127.0.0.1:5500/Project/HTML/trangchu.html"
+        window.location.href="/Project/HTML/trangchu.html"
         }else{
         localStorage.removeItem("currentUser")
-        window.location.href="http://127.0.0.1:5500/Project/HTML/admin__product.html"
+        window.location.href="/Project/HTML/admin__chart.html"
         }
         },3000)
         }else{

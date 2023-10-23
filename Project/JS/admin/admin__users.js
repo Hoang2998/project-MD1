@@ -14,7 +14,8 @@ let statutAlert = [
 function renderUsers(){
     let text =""
     for(let i=0;i<listUser.length;i++){
-        text += `
+        if(listUser[i].role != "admin"){
+            text += `
         <tr>
             <td>${i+1}</td>
                 <td><img src=${listUser[i].avatar}></td>
@@ -28,6 +29,8 @@ function renderUsers(){
         </tr>
 
         `
+        }
+        
     }
     document.getElementById("body").innerHTML = text
 }

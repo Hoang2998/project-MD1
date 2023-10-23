@@ -1,5 +1,5 @@
 var menuFood = JSON.parse(localStorage.getItem("menuFood"))
-console.log(menuFood);
+// console.log(menuFood);
 let sliderImg = document.getElementById("sliderImg")
 let slider =  document.getElementById("slider")
 let item = document.getElementsByClassName("sameImg")
@@ -10,6 +10,14 @@ let sliderActive = 0
 let itemLength = item.length-1;
 let open = 0  
 let listUser = JSON.parse(localStorage.getItem("listUser"))
+let alertAction = JSON.parse(localStorage.getItem("alertAction"))
+let currentUser = localStorage.getItem("currentUser")
+let alertEmailUsers = document.getElementById("alertInfoEmail")   
+let alertPasswordUser = document.getElementById("alertInfoPassword")
+let alertPasswordUserNew = document.getElementById("alertInfoPasswordNew")
+let indexUser;
+let newPassword;
+let openAlert=0
 // let admin = {
 //     avatar: "../img/avatar.jpg",
 //     email:"admin@gmail.com",
@@ -21,13 +29,67 @@ let listUser = JSON.parse(localStorage.getItem("listUser"))
 // }
 // listUser.push(admin)
 // localStorage.setItem("listUser",JSON.stringify(listUser))
-let currentUser = localStorage.getItem("currentUser")
-let  alertEmailUsers = document.getElementById("alertInfoEmail")   
-let alertPasswordUser = document.getElementById("alertInfoPassword")
-let alertPasswordUserNew = document.getElementById("alertInfoPasswordNew")
-let indexUser;
-let newPassword;
 
+for(let i =0;i<listUser.length;i++){
+    if(listUser[i].id == currentUser){
+        indexUser = i
+        document.getElementById("header__avatar").src=listUser[i].avatar;
+        document.getElementById("nameUser").innerHTML=listUser[i].username;
+    }
+ }
+let totalBillUserNow = alertAction.filter((element)=>{
+    if(element.idUser == currentUser){
+        return element
+    }
+})
+checkNumAlert()
+function checkNumAlert(){
+    if(totalBillUserNow.length > listUser[indexUser].alertBill){
+        document.getElementsByClassName("bellalert")[0].classList.add("ringBell")
+        let number = totalBillUserNow.length - listUser[indexUser].alertBill
+        document.getElementById("numberAlertBell").innerHTML = number
+        renderAlert(number)
+    }else{
+        document.getElementById("numberAlertBell").style.backgroundColor="rgba(10, 84, 10,0.8)"
+        document.getElementsByClassName("bellalert")[0].classList.remove("ringBell")
+        let number = totalBillUserNow.length - listUser[indexUser].alertBill
+        document.getElementById("numberAlertBell").innerHTML = number
+        renderAlert(number)
+    }
+}
+
+function stopRingBell(){
+    openAlert++
+    if(openAlert == 1){
+            listUser[indexUser].alertBill = totalBillUserNow.length
+            localStorage.setItem("listUser",JSON.stringify(listUser))
+            document.getElementById("displayAlertBell").style.visibility="visible"
+            document.getElementsByClassName("bellalert")[0].classList.remove("ringBell")
+    }else{
+        openAlert = 0
+        document.getElementById("displayAlertBell").style.visibility="hidden"
+        checkNumAlert()
+    }
+}
+function renderAlert(number){
+    let text =""
+    for (let i = 0; i < totalBillUserNow.length; i++) {
+        text += 
+        `
+        <div class="statusN">
+        <p style="width: 80%;padding:0px 8px;">
+            Đơn hàng <span>${totalBillUserNow[i].idBill}</span> <span>${totalBillUserNow[i].status}</span>
+        </p> 
+        <div style=" font-size: 1vw;" class="statusAlert"> đã đọc </div>
+        </div>
+        `
+    }
+    document.getElementById("displayAlertBell").innerHTML=text
+    for(let j=0 ; j<number ; j++){
+        document.getElementsByClassName("statusAlert")[j].innerHTML=""
+        document.getElementsByClassName("statusAlert")[j].classList.add("seen")
+    }
+}
 window.onscroll = function() {myFunctionA()};
 
         function myFunctionA() {
@@ -50,13 +112,7 @@ window.onscroll = function() {myFunctionA()};
           document.getElementsByClassName("qsfour")[0].classList.remove("qsUp")
         }
 
-for(let i =0;i<listUser.length;i++){
-    if(listUser[i].id == currentUser){
-        indexUser = i
-        document.getElementById("header__avatar").src=listUser[i].avatar;
-        document.getElementById("nameUser").innerHTML=listUser[i].username;
-    }
- }
+
 // cart = listUser[indexUser].cart
 // document.getElementById("alertProduct")=cart.length
 function checkLogin(){
@@ -69,9 +125,9 @@ function checkLogin(){
 checkLogin()
 function changeCart(){
     if(currentUser == null){
-        window.location.href="http://127.0.0.1:5500/Project/HTML/register__login.html"
+        window.location.href="/Project/HTML/register__login.html"
         }else{
-        window.location.href="http://127.0.0.1:5500/Project/HTML/cart.html"
+        window.location.href="/Project/HTML/cart.html"
         }
 }
 
@@ -116,7 +172,7 @@ function reloadSlider() {
 
 function openInfoUser(){
     if(currentUser == null){
-        window.location.href="http://127.0.0.1:5500/Project/HTML/register__login.html"
+        window.location.href="/Project/HTML/register__login.html"
     }
     open++;
     if(open<2){
@@ -274,5 +330,5 @@ function logOut(){
     localStorage.removeItem("currentUser")
     document.getElementById("tableInfoUser").style.right="-50vw"
     localStorage.removeItem("cart")
-    window.location.href="http://127.0.0.1:5500/Project/HTML/register__login.html"    
+    window.location.href="/Project/HTML/register__login.html"    
 }

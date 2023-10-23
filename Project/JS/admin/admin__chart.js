@@ -19,7 +19,7 @@ let data = {
       hoverOffset: 4,
     }]
   };
-
+listUser = listUser.filter((element)=>element.role == "user")
 document.getElementById("viewUsers").innerHTML = listUser.length
 
 let totalStock = menuFood.reduce((a,b)=> a + +b.stock,0  )
@@ -43,10 +43,7 @@ let totalMoney = billAccept.reduce((a,b)=> a + +b.priceBill.match(/[0-9]/g).join
 
 document.getElementById("money").innerHTML= totalMoney.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })
 
-// for (let i = 0; i < menuFood.length; i++) {
-//     menuFood[i].sold = 0
-// }
-// localStorage.setItem("menuFood",JSON.stringify(menuFood))
+
 
 let topSale = menuFood.sort((a,b)=>b.sold - a.sold)
 

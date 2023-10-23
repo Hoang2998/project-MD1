@@ -32,13 +32,16 @@ header div{
     display: flex;
 }
 header img{
-    margin-right: 1px;
+    margin-right: 5px;
 }
-header p:hover{
+/* header p:hover{
     color: aliceblue;
-}
-header span:hover{
+} */
+/* header span:hover{
     color: aliceblue;
+} */
+.logout{
+    margin-right: 1vw;
 }
 nav{
     color: rgb(220, 226, 232,0.8);
@@ -145,6 +148,103 @@ nav:hover{
     transition: 0.5s ease-in;
 }
 
+.bell{
+    position: relative;
+    display: flex;
+    margin-right: 1vw;
+}
+.bellalert{
+    /* animation: ring 6s ease-in-out infinite; */
+    transform-origin: 50% 0%;
+}
+#displayAlertBell{
+    position: absolute;
+    right: 2vw;
+    background-color: rgb(242, 235, 226);
+    top: 3.5vw;
+    width: 23vw;
+    height: 30vw;
+    border-radius: 1vw;
+    box-shadow: 2px 2px 2px 2px rgba(10, 10, 10, 0.6);
+    padding: 2vw 1vw;
+    visibility: hidden;
+    color:black;
+    display: flex;
+    flex-direction: column; 
+}
+#displayAlertBell div span{
+    color: brown;
+}
+#displayAlertBell div{
+    margin-bottom: 0.5vw;
+}
+#displayAlertBell div:hover {
+    background-color:rgba(245, 222, 179, 0.806);
+    border-radius: 10px;
+}
+.ringBell{
+    animation: ring 4s ease-in-out infinite;
+}
+@keyframes ring {
+    1%{
+        transform: rotateZ(30deg);
+    }
+    3%{transform: rotateZ(-28deg);}
+    5%{transform: rotateZ(28deg);}
+    7%{transform: rotateZ(-26deg);}
+    9%{transform: rotateZ(26deg);}
+    11%{transform: rotateZ(-24deg);}
+    15%{transform: rotateZ(24deg);}
+    17%{transform: rotateZ(-22deg);}
+    19%{transform: rotateZ(22deg);}
+    21%{transform: rotateZ(-20deg);}
+    23%{transform: rotateZ(20deg);}
+    25%{transform: rotateZ(-18deg);}
+    27%{transform: rotateZ(18deg);}
+    30%{transform: rotateZ(-16deg);}
+    33%{transform: rotateZ(16deg);}
+    35%{transform: rotateZ(-14deg);}
+    37%{transform: rotateZ(14deg);}
+    39%{transform: rotateZ(-12deg);}
+    41%{transform: rotateZ(12deg);}
+    43%{transform: rotateZ(-10deg);}
+    45%{transform: rotateZ(10deg);}
+    47%{transform: rotateZ(-8deg);}
+    49%{transform: rotateZ(8deg);}
+    51%{transform: rotateZ(-6deg);}
+    53%{transform: rotateZ(6deg);}
+    55%{transform: rotateZ(-4deg);}
+    57%{transform: rotateZ(4deg);}
+    59%{transform: rotateZ(-2deg);}
+    61%{transform: rotateZ(2deg);}
+    63%{transform: rotateZ(-1deg);}
+    65%{transform: rotateZ(1deg);}
+    100%{transform: rotateZ(0deg);}
+}
+#numberAlertBell{
+    position: absolute;
+    background-color: brown;
+    color: white;
+    font-size: 0.8vw;
+    width: 1vw;
+    height: 1vw;
+    border-radius: 10px;
+    top: -5px;
+    right: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.statusAlert{
+    color: green;
+}
+.seen{
+    /* display: inline-block; */
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: brown;
+}
 
 
 

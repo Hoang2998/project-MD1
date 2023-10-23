@@ -5,6 +5,7 @@ let menuFood = [
         price:35000,
         category:"chè",
         stock:100,
+        sold: 0,
         id:1,
         content:"Chang Hi gợi ý cho các tín đồ thèm ngọt 𝗰𝗵𝗲̀ 𝗸𝗵𝗼𝗮𝗶 𝗱𝗲̉𝗼 𝗽𝗵𝗼̂ 𝗺𝗮𝗶 𝗹𝗮̣𝗻𝗵 đ𝗮̣̆𝗰 𝗯𝗶𝗲̣̂𝘁 với em thạch phomai to “bạ chà bứ”. Tuyệt vời làm sao khi sắn một miếng thạch phô mai mềm dẻo, béo béo trong miệng. Các topping khoai dẻo hòa quyện cùng nước chan thảo mộc…",
     },
@@ -14,6 +15,7 @@ let menuFood = [
         price:32000,
         category:"chè",
         stock:100,
+        sold: 0,
         id:2,
         content:"Chang Hi gợi ý cho các tín đồ thèm ngọt 𝗰𝗵𝗲̀ 𝗸𝗵𝗼𝗮𝗶 𝗱𝗲̉𝗼 𝗽𝗵𝗼̂ 𝗺𝗮𝗶 𝗹𝗮̣𝗻𝗵 đ𝗮̣̆𝗰 𝗯𝗶𝗲̣̂𝘁 với em thạch phomai to “bạ chà bứ”. Tuyệt vời làm sao khi sắn một miếng thạch phô mai mềm dẻo, béo béo trong miệng. Các topping khoai dẻo hòa quyện cùng nước chan thảo mộc…",
     },
@@ -23,6 +25,7 @@ let menuFood = [
         price:30000,
         category:"chè",
         stock:100,
+        sold: 0,
         id:3,
         content:"Chang Hi gợi ý cho các tín đồ thèm ngọt 𝗰𝗵𝗲̀ 𝗸𝗵𝗼𝗮𝗶 𝗱𝗲̉𝗼 𝗽𝗵𝗼̂ 𝗺𝗮𝗶 𝗹𝗮̣𝗻𝗵 đ𝗮̣̆𝗰 𝗯𝗶𝗲̣̂𝘁 với em thạch phomai to “bạ chà bứ”. Tuyệt vời làm sao khi sắn một miếng thạch phô mai mềm dẻo, béo béo trong miệng. Các topping khoai dẻo hòa quyện cùng nước chan thảo mộc…",
 
@@ -33,6 +36,7 @@ let menuFood = [
         price:36000,
         category:"chè",
         stock:100,
+        sold: 0,
         id:4,
         content:"Chang Hi gợi ý cho các tín đồ thèm ngọt 𝗰𝗵𝗲̀ 𝗸𝗵𝗼𝗮𝗶 𝗱𝗲̉𝗼 𝗽𝗵𝗼̂ 𝗺𝗮𝗶 𝗹𝗮̣𝗻𝗵 đ𝗮̣̆𝗰 𝗯𝗶𝗲̣̂𝘁 với em thạch phomai to “bạ chà bứ”. Tuyệt vời làm sao khi sắn một miếng thạch phô mai mềm dẻo, béo béo trong miệng. Các topping khoai dẻo hòa quyện cùng nước chan thảo mộc…",
 
@@ -43,6 +47,7 @@ let menuFood = [
         price:35000,
         category:"chè",
         stock:100,
+        sold: 0,
         id:5,
     },
     {
@@ -51,6 +56,7 @@ let menuFood = [
         price:40000,
         category:"chè",
         stock:100,
+        sold: 0,
         id:6,
         content:"Chang Hi gợi ý cho các tín đồ thèm ngọt 𝗰𝗵𝗲̀ 𝗸𝗵𝗼𝗮𝗶 𝗱𝗲̉𝗼 𝗽𝗵𝗼̂ 𝗺𝗮𝗶 𝗹𝗮̣𝗻𝗵 đ𝗮̣̆𝗰 𝗯𝗶𝗲̣̂𝘁 với em thạch phomai to “bạ chà bứ”. Tuyệt vời làm sao khi sắn một miếng thạch phô mai mềm dẻo, béo béo trong miệng. Các topping khoai dẻo hòa quyện cùng nước chan thảo mộc…",
 
@@ -61,6 +67,7 @@ let menuFood = [
         price:35000,
         category:"chè",
         stock:100,
+        sold: 0,
         id:7,
         content:"Chang Hi gợi ý cho các tín đồ thèm ngọt 𝗰𝗵𝗲̀ 𝗸𝗵𝗼𝗮𝗶 𝗱𝗲̉𝗼 𝗽𝗵𝗼̂ 𝗺𝗮𝗶 𝗹𝗮̣𝗻𝗵 đ𝗮̣̆𝗰 𝗯𝗶𝗲̣̂𝘁 với em thạch phomai to “bạ chà bứ”. Tuyệt vời làm sao khi sắn một miếng thạch phô mai mềm dẻo, béo béo trong miệng. Các topping khoai dẻo hòa quyện cùng nước chan thảo mộc…",
 
@@ -71,6 +78,7 @@ let menuFood = [
         price:30000,
         category:"chè",
         stock:100,
+        sold: 0,
         id:8,
         content:"Chang Hi gợi ý cho các tín đồ thèm ngọt 𝗰𝗵𝗲̀ 𝗸𝗵𝗼𝗮𝗶 𝗱𝗲̉𝗼 𝗽𝗵𝗼̂ 𝗺𝗮𝗶 𝗹𝗮̣𝗻𝗵 đ𝗮̣̆𝗰 𝗯𝗶𝗲̣̂𝘁 với em thạch phomai to “bạ chà bứ”. Tuyệt vời làm sao khi sắn một miếng thạch phô mai mềm dẻo, béo béo trong miệng. Các topping khoai dẻo hòa quyện cùng nước chan thảo mộc…",
 
@@ -81,6 +89,7 @@ let menuFood = [
         price:32000,
         category:"trà",
         stock:100,
+        sold: 0,
         id:9,
         content:"Chang Hi gợi ý cho các tín đồ thèm ngọt 𝗰𝗵𝗲̀ 𝗸𝗵𝗼𝗮𝗶 𝗱𝗲̉𝗼 𝗽𝗵𝗼̂ 𝗺𝗮𝗶 𝗹𝗮̣𝗻𝗵 đ𝗮̣̆𝗰 𝗯𝗶𝗲̣̂𝘁 với em thạch phomai to “bạ chà bứ”. Tuyệt vời làm sao khi sắn một miếng thạch phô mai mềm dẻo, béo béo trong miệng. Các topping khoai dẻo hòa quyện cùng nước chan thảo mộc…",
 
@@ -91,6 +100,7 @@ let menuFood = [
         price:35000,
         category:"trà",
         stock:100,
+        sold: 0,
         id:10,
         content:"Chang Hi gợi ý cho các tín đồ thèm ngọt 𝗰𝗵𝗲̀ 𝗸𝗵𝗼𝗮𝗶 𝗱𝗲̉𝗼 𝗽𝗵𝗼̂ 𝗺𝗮𝗶 𝗹𝗮̣𝗻𝗵 đ𝗮̣̆𝗰 𝗯𝗶𝗲̣̂𝘁 với em thạch phomai to “bạ chà bứ”. Tuyệt vời làm sao khi sắn một miếng thạch phô mai mềm dẻo, béo béo trong miệng. Các topping khoai dẻo hòa quyện cùng nước chan thảo mộc…",
 
@@ -101,6 +111,7 @@ let menuFood = [
         price:30000,
         category:"trà",
         stock:100,
+        sold: 0,
         id:11,
         content:"Chang Hi gợi ý cho các tín đồ thèm ngọt 𝗰𝗵𝗲̀ 𝗸𝗵𝗼𝗮𝗶 𝗱𝗲̉𝗼 𝗽𝗵𝗼̂ 𝗺𝗮𝗶 𝗹𝗮̣𝗻𝗵 đ𝗮̣̆𝗰 𝗯𝗶𝗲̣̂𝘁 với em thạch phomai to “bạ chà bứ”. Tuyệt vời làm sao khi sắn một miếng thạch phô mai mềm dẻo, béo béo trong miệng. Các topping khoai dẻo hòa quyện cùng nước chan thảo mộc…",
 
@@ -111,6 +122,7 @@ let menuFood = [
         price:35000,
         category:"trà",
         stock:100,
+        sold: 0,
         id:12,
         content:"Chang Hi gợi ý cho các tín đồ thèm ngọt 𝗰𝗵𝗲̀ 𝗸𝗵𝗼𝗮𝗶 𝗱𝗲̉𝗼 𝗽𝗵𝗼̂ 𝗺𝗮𝗶 𝗹𝗮̣𝗻𝗵 đ𝗮̣̆𝗰 𝗯𝗶𝗲̣̂𝘁 với em thạch phomai to “bạ chà bứ”. Tuyệt vời làm sao khi sắn một miếng thạch phô mai mềm dẻo, béo béo trong miệng. Các topping khoai dẻo hòa quyện cùng nước chan thảo mộc…",
 
@@ -121,6 +133,7 @@ let menuFood = [
         price:30000,
         category:"trà",
         stock:100,
+        sold: 0,
         id:13,
         content:"Chang Hi gợi ý cho các tín đồ thèm ngọt 𝗰𝗵𝗲̀ 𝗸𝗵𝗼𝗮𝗶 𝗱𝗲̉𝗼 𝗽𝗵𝗼̂ 𝗺𝗮𝗶 𝗹𝗮̣𝗻𝗵 đ𝗮̣̆𝗰 𝗯𝗶𝗲̣̂𝘁 với em thạch phomai to “bạ chà bứ”. Tuyệt vời làm sao khi sắn một miếng thạch phô mai mềm dẻo, béo béo trong miệng. Các topping khoai dẻo hòa quyện cùng nước chan thảo mộc…",
 
@@ -131,6 +144,7 @@ let menuFood = [
         price:32000,
         category:"trà",
         stock:100,
+        sold: 0,
         id:14,
         content:"Chang Hi gợi ý cho các tín đồ thèm ngọt 𝗰𝗵𝗲̀ 𝗸𝗵𝗼𝗮𝗶 𝗱𝗲̉𝗼 𝗽𝗵𝗼̂ 𝗺𝗮𝗶 𝗹𝗮̣𝗻𝗵 đ𝗮̣̆𝗰 𝗯𝗶𝗲̣̂𝘁 với em thạch phomai to “bạ chà bứ”. Tuyệt vời làm sao khi sắn một miếng thạch phô mai mềm dẻo, béo béo trong miệng. Các topping khoai dẻo hòa quyện cùng nước chan thảo mộc…",
 
@@ -141,6 +155,7 @@ let menuFood = [
         price:35000,
         category:"trà",
         stock:100,
+        sold: 0,
         id:15,
         content:"Chang Hi gợi ý cho các tín đồ thèm ngọt 𝗰𝗵𝗲̀ 𝗸𝗵𝗼𝗮𝗶 𝗱𝗲̉𝗼 𝗽𝗵𝗼̂ 𝗺𝗮𝗶 𝗹𝗮̣𝗻𝗵 đ𝗮̣̆𝗰 𝗯𝗶𝗲̣̂𝘁 với em thạch phomai to “bạ chà bứ”. Tuyệt vời làm sao khi sắn một miếng thạch phô mai mềm dẻo, béo béo trong miệng. Các topping khoai dẻo hòa quyện cùng nước chan thảo mộc…",
 
@@ -151,6 +166,7 @@ let menuFood = [
         price:55000,
         category:"đồ ăn vặt",
         stock:100,
+        sold: 0,
         id:16,
         content:"Chang Hi gợi ý cho các tín đồ thèm ngọt 𝗰𝗵𝗲̀ 𝗸𝗵𝗼𝗮𝗶 𝗱𝗲̉𝗼 𝗽𝗵𝗼̂ 𝗺𝗮𝗶 𝗹𝗮̣𝗻𝗵 đ𝗮̣̆𝗰 𝗯𝗶𝗲̣̂𝘁 với em thạch phomai to “bạ chà bứ”. Tuyệt vời làm sao khi sắn một miếng thạch phô mai mềm dẻo, béo béo trong miệng. Các topping khoai dẻo hòa quyện cùng nước chan thảo mộc…",
 
@@ -161,6 +177,7 @@ let menuFood = [
         price:45000,
         category:"đồ ăn vặt",
         stock:100,
+        sold: 0,
         id:17,
         content:"Chang Hi gợi ý cho các tín đồ thèm ngọt 𝗰𝗵𝗲̀ 𝗸𝗵𝗼𝗮𝗶 𝗱𝗲̉𝗼 𝗽𝗵𝗼̂ 𝗺𝗮𝗶 𝗹𝗮̣𝗻𝗵 đ𝗮̣̆𝗰 𝗯𝗶𝗲̣̂𝘁 với em thạch phomai to “bạ chà bứ”. Tuyệt vời làm sao khi sắn một miếng thạch phô mai mềm dẻo, béo béo trong miệng. Các topping khoai dẻo hòa quyện cùng nước chan thảo mộc…",
 
@@ -171,6 +188,7 @@ let menuFood = [
         price:35000,
         category:"đồ ăn vặt",
         stock:100,
+        sold: 0,
         id:18,
         content:"Chang Hi gợi ý cho các tín đồ thèm ngọt 𝗰𝗵𝗲̀ 𝗸𝗵𝗼𝗮𝗶 𝗱𝗲̉𝗼 𝗽𝗵𝗼̂ 𝗺𝗮𝗶 𝗹𝗮̣𝗻𝗵 đ𝗮̣̆𝗰 𝗯𝗶𝗲̣̂𝘁 với em thạch phomai to “bạ chà bứ”. Tuyệt vời làm sao khi sắn một miếng thạch phô mai mềm dẻo, béo béo trong miệng. Các topping khoai dẻo hòa quyện cùng nước chan thảo mộc…",
 
@@ -181,6 +199,7 @@ let menuFood = [
         price:30000,
         category:"đồ ăn vặt",
         stock:100,
+        sold: 0,
         id:19,
         content:"Chang Hi gợi ý cho các tín đồ thèm ngọt 𝗰𝗵𝗲̀ 𝗸𝗵𝗼𝗮𝗶 𝗱𝗲̉𝗼 𝗽𝗵𝗼̂ 𝗺𝗮𝗶 𝗹𝗮̣𝗻𝗵 đ𝗮̣̆𝗰 𝗯𝗶𝗲̣̂𝘁 với em thạch phomai to “bạ chà bứ”. Tuyệt vời làm sao khi sắn một miếng thạch phô mai mềm dẻo, béo béo trong miệng. Các topping khoai dẻo hòa quyện cùng nước chan thảo mộc…",
 
@@ -205,3 +224,17 @@ let category = [
 
 // localStorage.setItem("category",JSON.stringify(category))
 
+let admin = {
+        avatar: "../img/avatar.jpg",
+        email:"admin@gmail.com",
+        password:"11111111",
+        role:"admin",
+        status:1,
+        username:"Admin1",
+        id:1,
+    }
+    listUser.push(admin)
+    localStorage.setItem("listUser",JSON.stringify(listUser))
+
+let alertAction = []
+localStorage.setItem("alertAction",JSON.stringify(alertAction))

@@ -12,14 +12,26 @@
     <header>
         <input type="text" placeholder="Tìm kiếm đơn hàng theo ID" oninput="findBill()" id="findBill">
         <div >
+            <div class="bell" onclick="stopRingBell()">
+                <div class="bellalert">
+                    <img src="../img/notification-bell.png" width="90%" height="90%">
+                </div>
+                <div id="numberAlertBell">0</div>
+            </div>
             <div style="margin-right: 2vw;" onclick="changeMainPage()">
-                <img src="../img/logoWeb.png"  width="20vw" alt="">
+                <img src="../img/logoWeb.png"  width="25%"  alt="">
                 <p>Trang chủ</p>
             </div>
         
-        <span class="material-symbols-outlined" onclick="logOut()">
+        <span class="material-symbols-outlined logout" onclick="logOut()">
             logout
         </span>
+        </div>
+        <div id="displayAlertBell">
+            <div style="border-bottom: 1px solid black;">
+                <p style="margin: 0;padding: 0.5vw 0;"> Sản phẩm <span>che xoai</span> còn lại: <span>20</span> cần nhập hàng thêm </p>
+            </div>
+           
         </div>
     </header>
     <main>
@@ -100,17 +112,17 @@
     </main >
     
     <script>
-        function productPage(){
-            window.location.href="http://127.0.0.1:5500/Project/HTML/admin__product.html"
+        function productPage() {
+            window.location.href = "/Project/HTML/admin__product.html"
         }
-        function usersPage(){
-            window.location.href="http://127.0.0.1:5500/Project/HTML/admin__users.html"
+        function usersPage() {
+            window.location.href = "/Project/HTML/admin__users.html"
         }
-        function billsPage(){
-            window.location.href="http://127.0.0.1:5500/Project/HTML/admin__bills.html"
+        function billsPage() {
+            window.location.href = "/Project/HTML/admin__bills.html"
         }
-        function categoryPage(){
-            window.location.href="http://127.0.0.1:5500/Project/HTML/admin__chart.html"
+        function categoryPage() {
+            window.location.href = "/Project/HTML/admin__chart.html"
         }
     </script>
     <script src="../JS/admin/admin.js"></script>

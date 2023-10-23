@@ -3,11 +3,58 @@ let currentPage = 1;
 let productPerPage = 5;
 let renderArr = menuFood;
 let imgProduct;
+let openAlert = 0
+// for (let i = 0; i < menuFood.length; i++) {
+//     menuFood[i].sold = 0
+// }
+// localStorage.setItem("menuFood",JSON.stringify(menuFood))
+checkNumberAlert()
+function checkNumberAlert(){
+   let arrAlert = menuFood.filter((element)=>{
+        let product = element.stock 
+        if(product < 20){
+            return element
+        }
+   })
+   console.log(arrAlert);
+   renderAlert(arrAlert)
+   if(arrAlert.length > 0){
+        document.getElementById("numberAlertBell").innerHTML=arrAlert.length
+        document.getElementsByClassName("bellalert")[0].classList.add("ringBell")
+   }
+   
+}
+function renderAlert(arr){
+    let text =""
+    for(let i=0;i<arr.length;i++){
+        text += 
+        `
+        <div style="border-bottom: 1px solid black;">
+                <p style="margin: 0;padding: 0.5vw 0;"> Sản phẩm <span>${arr[i].name}</span> còn lại: <span>${arr[i].stock}</span> cần nhập hàng thêm </p>
+            </div>
+        ` 
+        document.getElementById("displayAlertBell").innerHTML=text
+    }
+}
+function stopRingBell(){
+    openAlert++
+    if(openAlert == 1){
+            document.getElementById("displayAlertBell").style.visibility="visible"
+            document.getElementsByClassName("bellalert")[0].classList.remove("ringBell")
+    }else{
+        openAlert = 0
+        document.getElementById("displayAlertBell").style.visibility="hidden"
+    }
+}
+
+
+
+
 function changeMainPage(){
-    window.location.href="http://127.0.0.1:5500/Project/HTML/trangchu.html"
+    window.location.href="/Project/HTML/trangchu.html"
 }
 function logOut(){
-    window.location.href="http://127.0.0.1:5500/Project/HTML/register__login.html"
+    window.location.href="/Project/HTML/register__login.html"
 
 }
 function renderProduct(){
@@ -235,6 +282,7 @@ function updateNewProduct(index){
     renderArr[index].imgProduct = imgProduct || renderArr[index].imgProduct
     localStorage.setItem("menuFood",JSON.stringify(menuFood))
     renderProduct()
+    checkNumberAlert()
     document.getElementById("viewUpdate").style.width="0vw"
     // document.getElementById("displayUpdate").innerHTML=""
 }

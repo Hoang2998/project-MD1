@@ -34,7 +34,7 @@ function renderCart(){
       document.getElementById("cart__body--display").innerHTML = text
       alertProduct()
 }
-renderCart()
+
 function cart__tang(index){
     cart[index].quantity++
     document.getElementsByClassName("cart__quantity")[index].innerHTML = cart[index].quantity
@@ -250,6 +250,7 @@ function showBill(id){
     </span>
     <h2>Hóa đơn mua hàng</h2>
     <div>Khách hàng: <p>${bills[i].nameUser}</p></div>            
+    <div>Hoá đơn số: <p>${bills[i].id}</p></div>            
     <div>Địa chỉ: <p>${bills[i].address}</p></div>            
     <div>Số điện thoại: <p>${bills[i].phone}</p></div>            
     <div>thời gian: <p>${bills[i].time}</p></div>            
