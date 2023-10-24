@@ -107,6 +107,8 @@ function addUser(){
         listUser.push(user);
         localStorage.setItem("listUser",JSON.stringify(listUser))
         document.getElementsByClassName("accept")[0].classList.add("accepDisplay")
+        document.getElementsByClassName("accept")[0].innerHTML=`<img src="../img/accept.jpg" alt="">`
+
         setTimeout (()=>{
         document.getElementsByClassName("accept")[0].classList.remove("accepDisplay")
         signUpName.value=""
@@ -116,8 +118,17 @@ function addUser(){
         alertEmail.innerHTML=""
         alertPassword.innerHTML=""
         alertPassword2.innerHTML=""
-        },3000)
+        },2000)
+    }else if(signUpName.value || Email || Password){
+        document.getElementsByClassName("accept")[0].classList.add("accepDisplay")
+        document.getElementsByClassName("accept")[0].classList.add("notAccept")
+        document.getElementsByClassName("accept")[0].innerHTML="Bạn cần nhập hết thông tin đăng kí"
+            setTimeout (()=>{
+            document.getElementsByClassName("accept")[0].classList.remove("accepDisplay")
+            document.getElementsByClassName("accept")[0].innerHTML=""
+        },2000)
     }
+
 }
 
 
@@ -154,7 +165,7 @@ function signIn__checkPassword(){
     Password = signInPassword.value.match(/^[0-9]{8}$/)
     console.log(Password);
     if(Password == null){
-        signIn__AlertPassword.innerHTML = "Mật khẩu của bạn ko hợp lệ"
+        // signIn__AlertPassword.innerHTML = "Mật khẩu của bạn ko hợp lệ"
         signIn__AlertPassword.style.color="red"
         signIn__AlertPassword.style.fontSize="10px"
         return;
@@ -201,7 +212,7 @@ function changePage(){
         localStorage.removeItem("currentUser")
         window.location.href="/Project/HTML/admin__chart.html"
         }
-        },3000)
+        },2000)
         }else{
             document.getElementsByClassName("accept")[1].classList.add("accepDisplay")
             document.getElementsByClassName("accept")[1].innerHTML="Tài khoản của bạn đã bị khóa !!!"
@@ -212,7 +223,7 @@ function changePage(){
             signIn__AlertEmail.innerHTML=""
             signIn__AlertPassword.innerHTML=""
             // window.location.href="http://127.0.0.1:5500/Project/HTML/trangchu.html"
-            },3000)
+            },2000)
         }
     }else{
     // document.getElementsByClassName("container__form container--signin")[0].style.opacity="0.8"
@@ -221,8 +232,8 @@ function changePage(){
     document.getElementsByClassName("accept")[1].innerHTML="Tài khoản hoặc mật khẩu của bạn ko đúng !"
         setTimeout (()=>{
         document.getElementsByClassName("accept")[1].classList.remove("accepDisplay")
-        // document.getElementsByClassName("accept")[1].innerHTML=""
-    },3000)
+        document.getElementsByClassName("accept")[1].innerHTML=""
+    },2000)
     
     }
 }

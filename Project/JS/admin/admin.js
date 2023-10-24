@@ -21,6 +21,9 @@ function checkNumberAlert(){
    if(arrAlert.length > 0){
         document.getElementById("numberAlertBell").innerHTML=arrAlert.length
         document.getElementsByClassName("bellalert")[0].classList.add("ringBell")
+   }else{
+    document.getElementById("numberAlertBell").innerHTML="0"
+    document.getElementsByClassName("bellalert")[0].classList.remove("ringBell")
    }
    
 }
@@ -198,6 +201,7 @@ function saveNewProduct(){
         category:document.getElementById("selectProduct").value,
         stock:document.getElementById("newQuantityProduct").value,
         id:uuid(),
+        sold:0,
         content:document.getElementById("newContent").value
     }
     console.log(food);

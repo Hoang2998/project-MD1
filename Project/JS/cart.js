@@ -150,6 +150,8 @@ function payTotal(){
         document.getElementById("inputPhoneNumber").value = ""
     },1500)
 }
+
+
 function closeHistory(){
     document.getElementById("historyBills").style.height="0vw"
 }

@@ -29,6 +29,17 @@ let openAlert=0
 // }
 // listUser.push(admin)
 // localStorage.setItem("listUser",JSON.stringify(listUser))
+let openMenu = 0
+function displayMenu(){
+    openMenu++
+    if(openMenu == 1){
+      document.getElementById("header__nabbar").style.top="10vw"  
+    }else{
+        document.getElementById("header__nabbar").style.top="-60vw" 
+        openMenu = 0 
+    }
+    
+}
 
 for(let i =0;i<listUser.length;i++){
     if(listUser[i].id == currentUser){
@@ -245,20 +256,15 @@ function checkPasswordUser(){
     Password = document.getElementById("info_PasswordUser").value.match(/^[0-9]{8}$/)
     console.log(Password);
     if(Password == null){
-        alertPasswordUser.innerHTML = "Mật khẩu của bạn ko hợp lệ"
+        // alertPasswordUser.innerHTML = "Mật khẩu của bạn ko hợp lệ"
         alertPasswordUser.style.color="red"
         alertPasswordUser.style.fontSize="10px"
-        return;
+        return false;
     }else{
         if(Password == listUser[indexUser].password){
-        alertPasswordUser.innerHTML = "done"
-        alertPasswordUser.style.color="green"
-        alertPasswordUser.style.fontSize="10px"
         return true;
         }else{
-        alertPasswordUser.innerHTML = "Sai mật khẩu"
-        alertPasswordUser.style.color="red"
-        alertPasswordUser.style.fontSize="10px"
+        return false;
         }
     }
 }
@@ -266,10 +272,8 @@ function checkPasswordUser(){
 function checkPasswordUserNew(){
     newPassword = document.getElementById("info_PasswordUserNew").value.match(/^[0-9]{8}$/)
     if(newPassword == null){
-        alertInfoPasswordNew.innerHTML = "Mật khẩu của bạn ko hợp lệ"
-        alertInfoPasswordNew.style.color="red"
-        alertInfoPasswordNew.style.fontSize="10px"
-        return;
+        alertInfoPasswordNew.innerHTML = ""
+        return false;
     }else{
         if(newPassword == listUser[indexUser].password){
         alertInfoPasswordNew.innerHTML = "Trùng mật khẩu cũ"
@@ -321,6 +325,12 @@ function updateUser(){
         },2000)
         document.getElementById("nameUser").innerHTML= document.getElementById("info__NameUser").value;
 
+ }else if(checkEmailUser() && document.getElementById("info_PasswordUserNew").value && document.getElementById("info_PasswordUser").value){
+    if( checkPasswordUser() == false){
+         alertPasswordUser.innerHTML = "sai mật khẩu"
+         alertPasswordUser.style.color="red"
+         alertPasswordUser.style.fontSize="10px"
+    }
  }
 
 }

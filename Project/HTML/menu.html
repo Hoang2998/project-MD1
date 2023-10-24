@@ -24,6 +24,9 @@
 <body>
     <header id="header">
         <div><img src="../img/logoWeb.png" alt="" id="header__logo"></div>
+        <div class="displayMenu" onclick="displayMenu()"><span class="material-symbols-outlined">
+            menu
+            </span></div>
         <nav id="header__nabbar">
             <a href="/Project/HTML/trangchu.html">Trang Chủ</a>
             <a href="/Project/HTML/info.html">Giới Thiệu</a>
@@ -51,7 +54,7 @@
             </span>
             <input type="text" id="inputFind" class="input" oninput="inputFindProduct()" placeholder="Tìm kiếm">
         </div>
-        <button onclick="logOut()">Login</button>
+        <button onclick="logOut()">Đăng nhập</button>
         <div id="displayAlertBell">
             <div
                 style="display: flex;justify-content: center;align-items: center; border-bottom: 1px solid rgb(219, 202, 202);padding: 0.5vw 0;">
@@ -110,9 +113,8 @@
             <div id="dotsProductFind">
             </div>
             <div class="find__button">
-                <button onclick="prevFind()">
-                    << /button>
-                        <button onclick="nextFind()">></button>
+                <button onclick="prevFind()"> < </button>
+                <button onclick="nextFind()">></button>
             </div>
         </div>
         <div id="infoProduct">
@@ -132,9 +134,8 @@
                 <div class="dotChe" onclick="choosePageShow()"></div>
             </div>
             <div class="che__button">
-                <button onclick="prevChe()">
-                    << /button>
-                        <button onclick="nextChe()">></button>
+                <button onclick="prevChe()"> < </button>
+                <button onclick="nextChe()">></button>
             </div>
         </div>
         <div id="traSua">
@@ -152,9 +153,8 @@
                 <div class="dotTrasua" onclick="choosePageShow()"></div>
             </div>
             <div class="traSua__button">
-                <button onclick="prevTra()">
-                    << /button>
-                        <button onclick="nextTra()">></button>
+                <button onclick="prevTra()"> < </button>
+                <button onclick="nextTra()">></button>
             </div>
         </div>
         <div id="dav">
@@ -172,9 +172,8 @@
                 <div class="dotDav" onclick="choosePageShow()"></div>
             </div>
             <div class="dav__button">
-                <button onclick="prevDav()">
-                    << /button>
-                        <button onclick="nextDav()">></button>
+                <button onclick="prevDav()">< </button>
+                <button onclick="nextDav()">></button>
             </div>
             <a href="#che1" class="backHome"><span class="material-symbols-outlined return">
                     stat_2

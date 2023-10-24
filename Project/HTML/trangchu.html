@@ -18,6 +18,9 @@
 <body>
     <header id="header">
         <div><img src="../img/logoWeb.png" alt="" id="header__logo"></div>
+        <div class="displayMenu" onclick="displayMenu()"><span class="material-symbols-outlined">
+            menu
+            </span></div>
         <nav id="header__nabbar">
             <a href="/Project/HTML/trangchu.html">Trang Chủ</a>
             <a href="/Project/HTML/info.html">Giới Thiệu</a>
@@ -39,7 +42,7 @@
         </div>
         <div style="display: flex;align-items: center;"><img src="../img/avatar.jpg" alt="" id="header__avatar"
                 onclick="openInfoUser()"><span id="nameUser"></span></div>
-        <button onclick="logOut()">Login</button>
+                <button onclick="logOut()">Login</button>
         <div id="displayAlertBell">
             <div
                 style="display: flex;justify-content: center;align-items: center; border-bottom: 1px solid rgb(219, 202, 202);padding: 0.5vw 0;">
@@ -91,9 +94,9 @@
         <img src="../img/meoThantai.png!bw700" alt="" class="cat">
         <!-- <img src="../img/pngtree-traditional-japanese-wave-art-png-image_9162643.png" alt="" class="cat"> -->
         <div><img src="../img/trangtri.png" alt="" class="border"></div>
-        <div><iframe
+        <div style="width: 85vw; height: 46vw;"><iframe
                 src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Ftiemchengonchanghiquocoai%2Fvideos%2F444925930500377%2F&show_text=false&width=560&t=0"
-                width="1072" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                width="100%" height="100%" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                 allowfullscreen="false" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture;"
                 allowFullScreen="true"></iframe></div>
         <div><img src="../img/trangtri.png" alt="" class="border"></div>
@@ -103,7 +106,7 @@
         <div class="wavetwo"></div>
     </section>
     <section class="section__two">
-        <div>
+        <div class="section__two__one">
             <h1> Chè Ngon Sáng Tạo </h1>
         </div>
         <div id="slider">
@@ -126,9 +129,8 @@
             </div>
 
             <div class="buttons">
-                <button id="pre">
-                    << /button>
-                        <button id="next">></button>
+                <button id="pre"> < </button>
+                <button id="next">></button>
             </div>
 
             <div class="dots">
@@ -141,7 +143,7 @@
                 </ul>
             </div>
         </div>
-        <div style="background-color: rgba(201, 27, 27, 0.6);width: 46vw;">
+        <div class="section__two__three">
             <div style="color: rgb(225, 228, 230);">
                 <h2 style="color: antiquewhite; margin-bottom: 1vw ; margin-left: 5vw;margin-top: 5vw;">Nguyên liệu tươi
                     sạch</h2>
@@ -168,10 +170,10 @@
                 của chúng tôi trong tháng này nhé.</p>
         </div>
         <div class="item__two">
-            <img src="../img/sec31.jpg" width="100%" height="380px">
+            <img src="../img/sec31.jpg" width="100%" height="100%">
         </div>
         <div class="item__two">
-            <img src="../img/sec32.jpg" width="100%" height="380px">
+            <img src="../img/sec32.jpg" width="100%" height="100%">
         </div>
 
     </section>
@@ -191,7 +193,7 @@
                 <p>Email: khuongdanhhoang123@gmai.com</p>
             </div>
             <div class="openHour">
-                <h3 style="font-size: 16px;">OPENING HOURS</h3>
+                <h3>OPENING HOURS</h3>
                 <pre>Mon-Thu:  8am-9pm</pre>
                 <pre>Fri-Sat:  8am-1am</pre>
                 <pre>Sunday:   9am-11pm</pre>
