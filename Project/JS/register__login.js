@@ -208,7 +208,7 @@ function changePage(){
         signIn__AlertEmail.innerHTML=""
         signIn__AlertPassword.innerHTML=""
         if(listUser[index].role == "user"){
-        window.location.href="/Project/HTML/trangchu.html"
+        window.location.href="/index.html"
         }else{
         localStorage.removeItem("currentUser")
         window.location.href="/Project/HTML/admin__chart.html"

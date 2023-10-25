@@ -54,7 +54,7 @@ function stopRingBell(){
 
 
 function changeMainPage(){
-    window.location.href="/Project/HTML/trangchu.html"
+    window.location.href="/index.html"
 }
 function logOut(){
     window.location.href="/Project/HTML/register__login.html"
