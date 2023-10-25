@@ -104,7 +104,7 @@ function renderTopUser(){
     let arrTopUser =[];
     let index;
     for(let i=0;i<listUser.length;i++){
-        let idUser = bills.filter((element)=>{
+        let idUser = billAccept.filter((element)=>{
             if(element.idUser == listUser[i].id){
                 return element
             }

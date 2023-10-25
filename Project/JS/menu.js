@@ -195,7 +195,7 @@ function displayInforProduct(id){
                             <hr>
                             <pre>Sản phẩm: <span id="nameProduct">${menuFood[index].name}</span></pre>
                             <pre>Đơn Giá : <span id="priceProduct">${menuFood[index].price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</span> </pre>
-                            <pre>Số lượng: <button onclick="tang()" class="btn">+</button><input type="text" placeholder="0" id="inputQuantity" value = "1"><button onclick="giam()" class="btn">-</button></pre>
+                            <pre>Số lượng: <button onclick="tang(${index})" class="btn">+</button><input type="text" placeholder="0" id="inputQuantity" value = "1" oninput="checkStock(${index})"><button onclick="giam()" class="btn">-</button></pre>
                             <button onclick="addProduct(${index})" id="addProduct">+ thêm vào giỏ hàng</button>
                         </div>
                     </div>
@@ -203,9 +203,10 @@ function displayInforProduct(id){
     },500)
 }
 
-function tang(){
+function tang(index){
     console.log(1111);
     document.getElementById("inputQuantity").value = +document.getElementById("inputQuantity").value + 1
+    checkStock(index)
 }
 function giam(){
     document.getElementById("inputQuantity").value = +document.getElementById("inputQuantity").value - 1
@@ -230,25 +231,60 @@ function addProduct(index) {
             return
         }
     }
-
-    let product = {
-        quantity:document.getElementById("inputQuantity").value,
-        id:menuFood[index].id,
+    if( document.getElementById("inputQuantity").value <= menuFood[index].stock ){
+        let product = {
+            quantity:document.getElementById("inputQuantity").value,
+            id:menuFood[index].id,
+        }
+        cart.push(product)
+        listUser[indexUser].cart = cart
+        localStorage.setItem("listUser",JSON.stringify(listUser))
+        alertProduct()
+        document.getElementsByClassName("alertAddProduct")[0].classList.add("effecta")
+    
+        setTimeout(()=>{
+            document.getElementsByClassName("alertAddProduct")[0].classList.remove("effecta")
+    
+            },1500)
+    }else{
+         document.getElementsByClassName("alertAddProduct")[0].style.color = "white"
+        document.getElementsByClassName("alertAddProduct")[0].style.fontSize = "20px"
+        document.getElementsByClassName("alertAddProduct")[0].classList.add("effecta")
+        document.getElementsByClassName("alertAddProduct")[0].innerHTML = `Chỉ còn ${menuFood[index].stock } sản phẩm trong cửa hàng`  
+        setTimeout(()=>{
+            document.getElementById("inputQuantity").value = menuFood[index].stock
+            document.getElementsByClassName("alertAddProduct")[0].classList.remove("effecta")
+            document.getElementsByClassName("alertAddProduct")[0].innerHTML =`<img src="../img/doneAddProduct.png" width="80px" alt="">
+            <p>Thêm vào giỏ hàng thành công</p>`
+            },1500)
     }
-    cart.push(product)
-    listUser[indexUser].cart = cart
-    localStorage.setItem("listUser",JSON.stringify(listUser))
-    alertProduct()
-    document.getElementsByClassName("alertAddProduct")[0].classList.add("effecta")
-
-    setTimeout(()=>{
-        document.getElementsByClassName("alertAddProduct")[0].classList.remove("effecta")
-
-        },1500)
 
 }
 
+function checkStock(index){
+    let product = cart.filter((element)=> {
+        if(element.id == menuFood[index].id){
+            return element
+        }
+    })
+    // console.log(product);
+    // let total = document.getElementById("inputQuantity").value + +product[0].quantity
+    // console.log(total);
 
+    if(menuFood[index].stock <= document.getElementById("inputQuantity").value + +product[0]?.quantity){
+        document.getElementsByClassName("alertAddProduct")[0].style.color = "white"
+        document.getElementsByClassName("alertAddProduct")[0].style.fontSize = "20px"
+        document.getElementsByClassName("alertAddProduct")[0].classList.add("effecta")
+        document.getElementsByClassName("alertAddProduct")[0].innerHTML = `Chỉ còn ${menuFood[index].stock - product[0].quantity} sản phẩm trong cửa hàng`  
+        setTimeout(()=>{
+            document.getElementById("inputQuantity").value = menuFood[index].stock - product[0].quantity
+            document.getElementsByClassName("alertAddProduct")[0].classList.remove("effecta")
+            document.getElementsByClassName("alertAddProduct")[0].innerHTML =`<img src="../img/doneAddProduct.png" width="80px" alt="">
+            <p>Thêm vào giỏ hàng thành công</p>`
+            },1500)
+    
+    }
+}
 
 //========================================================================================================================================================================================================
 

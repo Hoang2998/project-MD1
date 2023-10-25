@@ -11,20 +11,36 @@ let statutAlert = [
         btn:"Khóa"
     }
 ]
+let listUserArr = listUser
+function findUser(){
+    if(document.getElementById("findUser").value == ""){
+        listUserArr = listUser
+    }else{
+        listUserArr = listUser.filter((element)=> {
+        if(element.id == document.getElementById("findUser").value){
+            return element
+        }
+    })
+    }
+    
+    renderUsers()
+}
+
 function renderUsers(){
     let text =""
-    for(let i=0;i<listUser.length;i++){
-        if(listUser[i].role != "admin"){
+    for(let i=0;i<listUserArr.length;i++){
+        if(listUserArr[i].role != "admin"){
             text += `
         <tr>
-            <td>${i+1}</td>
-                <td><img src=${listUser[i].avatar}></td>
-                <td>${listUser[i].email}</td>
-                <td>${listUser[i].username}</td>
+                <td>${i+1}</td>
+                <td>${listUserArr[i].id}</td>
+                <td><img src=${listUserArr[i].avatar}></td>
+                <td>${listUserArr[i].email}</td>
+                <td>${listUserArr[i].username}</td>
                 <td style="display: flex;justify-content: center;align-items: center;padding: 1.5vw; gap: 1vw;" class="satus" >
-                    <div class=${statutAlert[listUser[i].status].class}></div> <div class="comment" >${statutAlert[listUser[i].status].comment}</div></td>
+                    <div class=${statutAlert[listUserArr[i].status].class}></div> <div class="comment" >${statutAlert[listUserArr[i].status].comment}</div></td>
                 <td>
-                    <button onclick="changeStatus(${listUser[i].id})">${statutAlert[listUser[i].status].btn}</button>
+                    <button onclick="changeStatus(${listUserArr[i].id})">${statutAlert[listUserArr[i].status].btn}</button>
                 </td>
         </tr>
 

@@ -17,8 +17,14 @@
                 <input type="email" placeholder="Email: ...@gmail.com" class="input" oninput="signUp__checkEmail()" id="signUpEmail" />
                 <div id="signUp__AlertEmail" class="alert"></div>
                 <div class="accept"><img src="../img/accept.jpg" alt=""></div>
-                <input type="password" placeholder="Mật khẩu: (bao gồm 8 chữ số)" class="input" oninput="signUp__checkPassword()" id="signUpPassword" maxlength="8" />
-                <div id="signUp__AlertPassword" class="alert"></div>
+                <input type="password" placeholder="Mật khẩu: (bao gồm 8 Kí tự )" class="input" oninput="signUp__checkPassword()" id="signUpPassword" maxlength="8" />
+                <div id="signUp__AlertPassword" class="alert">
+                    <ul style="text-align: left;font-size: 10px;">
+                        <li>Bắt buộc có ít nhất 1 kí tự đặc biệt.</li>
+                        <li>Bắt buộc có ít nhất 1 kí tự chữ viết hoa.</li>
+                        <li>Có kí tự chữ và số </li>
+                    </ul>
+                </div>
                 <input type="password" placeholder="Nhập lại mật khẩu" class="input" oninput="signUp__checkPassword2()" id="signUpPassword2" maxlength="8" />
                 <div id="signUp__AlertPassword2" class="alert"></div>
                 <button class="btn" onclick="addUser()">Đăng Ký</button>

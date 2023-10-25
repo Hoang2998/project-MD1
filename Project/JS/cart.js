@@ -1,7 +1,6 @@
 
 renderCart()
 totalPrice()
-console.log(currentUser)
 
 function renderCart(){
     console.log("111")
@@ -19,7 +18,7 @@ function renderCart(){
                 <td>${menuFood[j].name}</td>
                 <td>${menuFood[j].price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</td>
                 <td class="cart__body__button">
-                    <button onclick="cart__tang(${i})">+</button>
+                    <button onclick="cart__tang(${i},${j})">+</button>
                     <div class="cart__quantity">${cart[i].quantity}</div>
                     <button onclick="cart__giam(${i})">-</button>
                 </td>
@@ -34,21 +33,26 @@ function renderCart(){
       document.getElementById("cart__body--display").innerHTML = text
       alertProduct()
 }
-
-function cart__tang(index){
-    cart[index].quantity++
+function checkStockCart(index,indexx){
+    if(cart[index].quantity >= menuFood[indexx].stock){
+        cart[index].quantity = menuFood[indexx].stock
+    }
     document.getElementsByClassName("cart__quantity")[index].innerHTML = cart[index].quantity
+}
+function cart__tang(index,indexx){
+    cart[index].quantity++
+    checkStockCart(index,indexx)
+    
     cart[index].quantity =  document.getElementsByClassName("cart__quantity")[index].innerHTML
     renderCart()
     totalPrice()
     alertProduct()
     localStorage.setItem("listUser",JSON.stringify(listUser))
-    
 }
 function cart__giam(index){
     cart[index].quantity--
     if(cart[index].quantity < 1){
-        cart__delete(index)   
+        cart[index].quantity = 1  
     }
     document.getElementsByClassName("cart__quantity")[index].innerHTML = cart[index].quantity
     localStorage.setItem("listUser",JSON.stringify(listUser))
@@ -225,6 +229,7 @@ function cancel_bill(id){
     if(bills[i].id == id){
         if(bills[i].status == 0){
             bills[i].status = 3
+            bills[i].priceBill = "0&nbsp;₫"
             for(let j =0; j<bills[i].cart.length;j++){
                 for(let k =0;k<menuFood.length;k++){
                     if(menuFood[k].id == bills[i].cart[j].id){
@@ -240,8 +245,8 @@ function cancel_bill(id){
     localStorage.setItem("bills",JSON.stringify(bills))
     localStorage.setItem("menuFood",JSON.stringify(menuFood))
     renderHistory()
-
 }
+
 function showBill(id){
     for (let i = 0; i<bills.length; i++) {
         if(bills[i].id == id){
@@ -305,3 +310,10 @@ function renderCartBill(id){
     }
     document.getElementById("renderCartBill").innerHTML =text
 }
+// for(let i =0;i<bills.length;i++){
+//     if(bills[i].status == 3){
+//         bills[i].priceBill = "0&nbsp;₫"
+
+//     }
+// }
+// localStorage.setItem("bills",JSON.stringify(bills))

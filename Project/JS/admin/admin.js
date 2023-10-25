@@ -79,7 +79,7 @@ function renderProduct(){
                     <td>${renderArr[i].price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</td>
                     <td>${renderArr[i].stock}</td>
                     <td>${renderArr[i].sold}</td>
-                    <td><button onclick="updateProduct(${renderArr[i].id})">Sửa</button><button onclick="alertDeleteProduct(${renderArr[i].id})" class="btn_delete">Xoá</button></td>
+                    <td><button onclick="updateProduct(${renderArr[i].id})">Cập nhập</button><button onclick="alertDeleteProduct(${renderArr[i].id})" class="btn_delete">Ngừng bán</button></td>
                 </tr>
         
         `

@@ -29,6 +29,29 @@ let openAlert=0
 // }
 // listUser.push(admin)
 // localStorage.setItem("listUser",JSON.stringify(listUser))
+
+window.onscroll = function() {myFunctionA()};
+
+        function myFunctionA() {
+          if (document.documentElement.scrollTop > 50 ) {
+            document.getElementsByClassName("qsone")[0].classList.add("qsUp")
+            setTimeout(()=>{
+            document.getElementsByClassName("qstwo")[0].classList.add("qsUp")
+            },500)
+            setTimeout(()=>{
+            document.getElementsByClassName("qsthree")[0].classList.add("qsUp")
+            },1000)
+            setTimeout(()=>{
+            document.getElementsByClassName("qsfour")[0].classList.add("qsUp")
+            },1500)
+            return
+          }
+          document.getElementsByClassName("qsone")[0].classList.remove("qsUp")
+          document.getElementsByClassName("qstwo")[0].classList.remove("qsUp")
+          document.getElementsByClassName("qsthree")[0].classList.remove("qsUp")
+          document.getElementsByClassName("qsfour")[0].classList.remove("qsUp")
+        }
+
 let openMenu = 0
 function displayMenu(){
     openMenu++
@@ -101,27 +124,7 @@ function renderAlert(number){
         document.getElementsByClassName("statusAlert")[j].classList.add("seen")
     }
 }
-window.onscroll = function() {myFunctionA()};
 
-        function myFunctionA() {
-          if (document.documentElement.scrollTop > 350 ) {
-            document.getElementsByClassName("qsone")[0].classList.add("qsUp")
-            setTimeout(()=>{
-            document.getElementsByClassName("qstwo")[0].classList.add("qsUp")
-            },500)
-            setTimeout(()=>{
-            document.getElementsByClassName("qsthree")[0].classList.add("qsUp")
-            },1000)
-            setTimeout(()=>{
-            document.getElementsByClassName("qsfour")[0].classList.add("qsUp")
-            },1500)
-            return
-          }
-          document.getElementsByClassName("qsone")[0].classList.remove("qsUp")
-          document.getElementsByClassName("qstwo")[0].classList.remove("qsUp")
-          document.getElementsByClassName("qsthree")[0].classList.remove("qsUp")
-          document.getElementsByClassName("qsfour")[0].classList.remove("qsUp")
-        }
 
 
 // cart = listUser[indexUser].cart

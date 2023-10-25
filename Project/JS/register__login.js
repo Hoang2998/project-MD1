@@ -56,8 +56,9 @@ let signUpPassword = document.getElementById("signUpPassword");
 let alertPassword = document.getElementById("signUp__AlertPassword");
 var Password;
 function signUp__checkPassword(){
-        Password = signUpPassword.value.match(/^[0-9]{8}$/)
+        Password = signUpPassword.value.match(/^(?=.*[!@#$%&*])(?=.*[A-Z])(?=.*[a-zA-Z0-9]).{8}$/)
         console.log(Password);
+        console.log(signUpPassword.value);
         if(Password == null){
             alertPassword.innerHTML = "Mật khẩu của bạn ko hợp lệ"
             alertPassword.style.color="red"
@@ -162,7 +163,7 @@ let signInPassword = document.getElementById("signInPassword")
 let signIn__AlertPassword = document.getElementById("signIn__AlertPassword")
 
 function signIn__checkPassword(){
-    Password = signInPassword.value.match(/^[0-9]{8}$/)
+    Password = signInPassword.value.match(/^(?=.*[!@#$%&*])(?=.*[A-Z])(?=.*[a-zA-Z0-9]).{8}$/)
     console.log(Password);
     if(Password == null){
         // signIn__AlertPassword.innerHTML = "Mật khẩu của bạn ko hợp lệ"
